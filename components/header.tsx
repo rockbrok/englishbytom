@@ -5,9 +5,9 @@ import Banner from "./banner"
 export default function Header() {
   return (
     <div className="w-full flex flex-col items-center">
-      <header className="flex w-[1015px] py-4 px-2">
-        <nav className="flex flex-row justify-between w-full">
-          <h6 className="">English by Tom</h6>
+      <header className="flex w-[1015px] py-4 px-2 justify-between">
+        <h6>English by Tom</h6>
+        <nav>
           <ul className="flex flex-row gap-4">
             <li>
               <Link href="/" className="py-2 px-4">Inicio</Link>

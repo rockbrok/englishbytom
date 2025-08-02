@@ -1,17 +1,14 @@
 import type { Metadata } from "next";
-import { Roboto, Open_Sans } from "next/font/google";
+import { Roboto } from "next/font/google";
 import Header from "@/components/header";
+import Footer from "@/components/footer";
+
 import "./globals.css";
 
 const roboto = Roboto({
   subsets: ["latin"],
   weight: ["100", "200", "400", "700"],
 });
-
-// const open_sans = Open_Sans({
-//   subsets: ["latin"],
-//   weight: ["300", "400", "700"],
-// });
 
 export const metadata: Metadata = {
   title: "English by Tom",
@@ -25,11 +22,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`font-sans ${roboto.className} w-full`}>
-
+      <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </head>
       <body className="flex flex-col items-center gap-8">
         <Header />
         <main className="w-[1015px] px-2 flex flex-col justify-start">{children}</main>
-
+        <Footer />
       </body>
     </html>
   );
