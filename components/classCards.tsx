@@ -32,7 +32,7 @@ export const ClassCards = ({ types = ["grupales", "unt", "individuales"] }: { ty
   const filteredCards = cardData.filter((card) => types.includes(card.id));
 
   return (
-    <div className="flex flex-row gap-4 w-full">
+    <div className="flex flex-col lg:flex-row gap-4 w-full">
       {filteredCards.map((card) => (
         <Card key={card.id} {...card} />
       ))}
@@ -66,7 +66,7 @@ const Card = ({
           <small className="text-[#5E5E5E] text-sm">{note}</small>
         </div>
       </div>
-      <Link href="/" className="py-2 px-4 bg-[#2C7AC3] rounded-md text-white w-fit">
+      <Link href="/" className="py-2 px-4 bg-[#1A5FA0] rounded-md text-white w-fit">
         Saber más
       </Link>
     </div>

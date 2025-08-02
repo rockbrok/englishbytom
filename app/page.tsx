@@ -19,7 +19,7 @@ export default function Home() {
       </section>
       <section className="flex flex-col gap-4">
         <h3 className="text-[#334155] font-medium text-xl">Testimoniales</h3>
-        <div className="flex flex-row gap-4">
+        <div className="flex flex-col sm:flex-row gap-4">
           <TestimonialCard
             quote={"Lo que más me gusta es lo claro que explica. En cada clase me llevo algo que me sirve en el momento."}
             name={"Matías Herrera"}

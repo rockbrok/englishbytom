@@ -21,13 +21,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`font-sans ${roboto.className} w-full`}>
+    <html lang="en" className={`font-sans ${roboto.className}`}>
       <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body className="flex flex-col items-center gap-8">
         <Header />
-        <main className="w-[1015px] px-2 flex flex-col justify-start">{children}</main>
+        <main className="responsive-container flex flex-col justify-start">{children}</main>
         <Footer />
       </body>
     </html>

@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+.responsive-container {
+  @apply w-full px-4 max-w-full sm:max-w-full md:px-[0px] md:max-w-2xl lg:max-w-3xl xl:max-w-5xl;
+}
+
 .image-overlay-container {
   position: relative;
 }

@@ -39,19 +39,19 @@ export default function Banner() {
   const { title, subtitle, buttonText } = bannerData
 
   return (
-    <div className="relative flex w-full h-fit image-overlay-container items-center justify-center">
+    <div className="relative flex responsive-container px-2! md:px-8! h-fit items-center justify-center">
       <Image
         src="/banner.jpg"
         style={{ objectFit: "cover" }}
-        className="opacity-25"
+        className="opacity-15 rounded-md"
         sizes="100vw"
         fill
         alt="Students at university"
       />
-      <div className='z-40 flex flex-col gap-4 w-full sm:max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-5xl px-2 py-8'>
+      <div className='z-40 flex flex-col gap-4 responsive-container py-8'>
         <div className='flex flex-col gap-2'>
-          <h1 className='text-5xl font-bold text-white'>{title}</h1>
-          <h2 className='text-xl text-white'>{subtitle}</h2>
+          <h1 className='text-5xl font-bold'>{title}</h1>
+          <h2 className='text-xl'>{subtitle}</h2>
         </div>
         {buttonText &&
           <Link href="/contact" className="py-2 px-4 bg-[#FFF951] w-fit rounded-md">

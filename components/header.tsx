@@ -1,14 +1,17 @@
 import * as React from "react"
 import Link from "next/link"
 import Banner from "./banner"
+import { Menu } from "lucide-react"
 
 export default function Header() {
   return (
     <div className="w-full flex flex-col items-center">
-      <header className="flex w-[1015px] py-4 px-2 justify-between">
+      <header className="flex responsive-container py-4 justify-between">
         <h6>English by Tom</h6>
+        
         <nav>
-          <ul className="flex flex-row gap-4">
+          <Menu color="black" size={24} className="flex md:hidden" />
+          <ul className="hidden md:flex flex-row gap-4">
             <li>
               <Link href="/" className="py-2 px-4">Inicio</Link>
             </li>
