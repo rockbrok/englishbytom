@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { Button } from "@/components/ui/button";
 import { Users, CalendarCheck2, GraduationCap, User, Edit } from 'lucide-react';
 
 const cardData = [
@@ -54,7 +55,7 @@ const Card = ({
   note: string;
 }) => {
   return (
-    <div className="flex flex-col bg-[#DFE0FF] rounded-md px-4 py-4 w-full gap-y-4 justify-between">
+    <div className="flex flex-col bg-primary-card rounded-md px-4 py-4 w-full gap-y-4 justify-between">
       <div className="flex flex-col gap-y-2">
         <div className="flex flex-row gap-x-2">
           {title_icon}
@@ -66,9 +67,11 @@ const Card = ({
           <small className="text-[#5E5E5E] text-sm">{note}</small>
         </div>
       </div>
-      <Link href="/" className="py-2 px-4 bg-[#1A5FA0] rounded-md text-white w-fit">
-        Saber más
-      </Link>
+      <Button asChild className="w-fit">
+        <Link href="/">
+          Saber más
+        </Link>
+      </Button>
     </div>
   );
 };

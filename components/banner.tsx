@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link';
 import { usePathname } from 'next/navigation'
+import { Button } from './ui/button';
 
 export default function Banner() {
 
@@ -54,9 +55,9 @@ export default function Banner() {
           <h2 className='text-lg md:text-xl'>{subtitle}</h2>
         </div>
         {buttonText &&
-          <Link href="/contact" className="py-2 px-4 bg-[#FFF951] w-fit rounded-md">
-            {buttonText}
-          </Link>
+          <Button asChild variant="yellow" className="w-fit">
+            <Link href="/contact" >{buttonText}</Link>
+          </Button>
         }
       </div>
     </div>
