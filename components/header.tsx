@@ -18,13 +18,11 @@ import {
   Drawer,
   DrawerClose,
   DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
   DrawerHeader,
-  DrawerPortal,
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer"
+import { useState } from "react";
 
 export default function Header() {
   return (
@@ -123,37 +121,45 @@ const NavMenu = () => {
 }
 
 const NavDrawer = () => {
+  const [open, setOpen] = useState(false)
+
+  const handleClose = () => {
+    setOpen(false)
+  }
+
   return (
-    <Drawer direction="right">
-      <DrawerTrigger>
+    <Drawer open={open} onOpenChange={setOpen} direction="right">
+      <DrawerTrigger asChild>
         <Menu color="black" size={24} className="flex md:hidden" />
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader className="flex flex-row items-center justify-between">
-          <div></div>
+          <div className="w-[30px]" />
           <DrawerTitle>Menu</DrawerTitle>
-          <Menu color="black" size={24} className="flex md:hidden" />
+          <DrawerClose className="flex size-[30px] items-center justify-center">
+            <Menu color="black" size={24} />
+          </DrawerClose>
         </DrawerHeader>
         <div>
-          <ul className="flex flex-col items-center gap-2">
+          <ul className="flex flex-col items-center gap-4">
             <li>
-              <Link href="/" className="nav-link">Inicio</Link>
+              <Link href="/" className="nav-link" onClick={handleClose}>Inicio</Link>
             </li>
             <li>
-              <Link href="/sobre" className="nav-link">Sobre Mi</Link>
+              <Link href="/sobre" className="nav-link" onClick={handleClose}>Sobre Mi</Link>
             </li>
             <li>
-              <Link href="/cursos-grupales" className="nav-link">Cursos Grupales</Link>
+              <Link href="/cursos-grupales" className="nav-link" onClick={handleClose}>Cursos Grupales</Link>
             </li>
             <li>
-              <Link href="/cursos-para-la-unt" className="nav-link">Cursos Para la UNT</Link>
+              <Link href="/cursos-para-la-unt" className="nav-link" onClick={handleClose}>Cursos Para la UNT</Link>
             </li>
             <li>
-              <Link href="/clases-individuales" className="nav-link">Clases Individuales</Link>
+              <Link href="/clases-individuales" className="nav-link" onClick={handleClose}>Clases Individuales</Link>
             </li>
             <li>
               <Button asChild variant="yellow" className="w-fit">
-                <Link href="/contacto" >Contacto</Link>
+                <Link href="/contacto" onClick={handleClose}>Contacto</Link>
               </Button>
             </li>
           </ul>
