@@ -27,7 +27,7 @@ export default function RootLayout({
       </head>
       <body className="flex flex-col items-center gap-8">
         <Header />
-        <main className="responsive-container flex flex-col justify-start">{children}</main>
+        <main className="responsive-container flex flex-col justify-start gap-y-8">{children}</main>
         <Footer />
       </body>
     </html>

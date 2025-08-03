@@ -65,8 +65,8 @@ export default function Banner() {
         alt="Students at university"
       />
       <div className='z-40 flex flex-col gap-4 responsive-container py-8'>
-        <div className='flex flex-col gap-2'>
-          <h1 className='text-4xl md:text-5xl font-bold'>{title}</h1>
+        <div className='flex flex-col gap-0.5 md:gap-1'>
+          <h1 className='text-2xl sm:text-3xl md:text-4xl font-bold'>{title}</h1>
           <h2 className='text-lg md:text-xl'>{subtitle}</h2>
         </div>
         {buttonText &&
