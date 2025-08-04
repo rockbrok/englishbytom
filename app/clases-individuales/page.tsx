@@ -8,8 +8,8 @@ import Link from "next/link"
 export default function IndividualClass() {
   return (
     <>
-      <section className="flex flex-col gap-y-4">
-        <h3 className="text-[#334155] font-medium text-xl">Detalles</h3>
+      <section className="section">
+        <h3 className="h3">Detalles</h3>
         <p>
           Ofrezco clases individuales para todos los niveles, desde principiantes hasta avanzados. Las clases se adaptan completamente a tus objetivos: ya sea mejorar la conversación, preparar un examen, practicar entrevistas de trabajo, escribir mails profesionales o avanzar con vocabulario específico de tu área (negocios, derecho, medicina, etc).
         </p>
@@ -19,12 +19,12 @@ export default function IndividualClass() {
           <Link href="/contacto" >Consultame</Link>
         </Button>
       </section>
-      <section className="flex flex-col gap-y-4">
-        <h3 className="text-[#334155] font-medium text-xl">Otras tipos de clases</h3>
+      <section className="section">
+        <h3 className="h3">Otras tipos de clases</h3>
         <ClassCards types={["unt", "grupales"]} />
       </section>
-      <section className="flex flex-col gap-y-4">
-        <h3 className="text-[#334155] font-medium text-xl">Preguntas Frecuentes</h3>
+      <section className="section">
+        <h3 className="h3">Preguntas Frecuentes</h3>
         <FAQ />
       </section>
 

@@ -8,8 +8,8 @@ import { Users, MessageCircle, Lightbulb, DollarSign, CheckCircle, Book, Laptop 
 export default function GroupClass() {
   return (
     <>
-      <section className="flex flex-col gap-y-4">
-        <h3 className="text-[#334155] font-medium text-xl">Detalles</h3>
+      <section className="section">
+        <h3 className="h3">Detalles</h3>
         <p>
           Las clases grupales son una forma dinámica, accesible y motivadora de mejorar tu inglés junto a otras personas con intereses similares. Los grupos son reducidos para que cada estudiante tenga tiempo real de hablar, practicar, y recibir correcciones. Nos enfocamos en la conversación, la fluidez y en usar el idioma de forma práctica desde el primer día. No necesitás tener un nivel alto: hay grupos para distintos niveles, desde principiante hasta avanzado.
         </p>
@@ -19,12 +19,12 @@ export default function GroupClass() {
           <Link href="/contacto" >Consultame</Link>
         </Button>
       </section>
-      <section className="flex flex-col gap-y-4">
-        <h3 className="text-[#334155] font-medium text-xl">Otras tipos de clases</h3>
+      <section className="section">
+        <h3 className="h3">Otras tipos de clases</h3>
         <ClassCards types={["unt", "individuales"]} />
       </section>
-      <section className="flex flex-col gap-y-4">
-        <h3 className="text-[#334155] font-medium text-xl">Preguntas Frecuentes</h3>
+      <section className="section">
+        <h3 className="h3">Preguntas Frecuentes</h3>
         <FAQ />
       </section>
 

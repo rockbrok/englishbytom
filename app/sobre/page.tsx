@@ -3,8 +3,8 @@ import { TestimonialCards } from "@/components/testimonialCards"
 export default function About() {
   return (
     <>
-      <section className="flex flex-col gap-y-4">
-        <h3 className="text-[#334155] font-medium text-xl">Sobre Mi</h3>
+      <section className="section">
+        <h3 className="h3">Sobre Mi</h3>
         <p>
           Soy profesor de inglés certificado, nacido en Estados Unidos, donde estudié el idioma y comencé mi camino como docente. Actualmente vivo en Tucumán, adonde vine por amor y donde encontré un lugar en el que me siento muy cómodo enseñando y aprendiendo todos los días.
         </p>
@@ -16,8 +16,8 @@ export default function About() {
         </p>
 
       </section>
-      <section className="flex flex-col gap-y-4">
-        <h3 className="text-[#334155] font-medium text-xl">Mi enfoque pedagógico</h3>
+      <section className="section">
+        <h3 className="h3">Mi enfoque pedagógico</h3>
         <p>
           Cada persona aprende de manera distinta, y eso es algo que tengo muy presente al planificar mis clases. Mi objetivo no es solo enseñar reglas gramaticales o vocabulario, sino crear espacios donde el idioma cobre vida y tenga sentido real para cada estudiante.
         </p>
@@ -29,8 +29,8 @@ export default function About() {
         </p>
 
       </section>
-      <section className="flex flex-col gap-y-4">
-        <h3 className="text-[#334155] font-medium text-xl">Testimoniales</h3>
+      <section className="section">
+        <h3 className="h3">Testimoniales</h3>
         <TestimonialCards />
       </section>
     </>
