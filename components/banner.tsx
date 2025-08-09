@@ -8,7 +8,13 @@ import { Button } from './ui/button';
 
 export default function Banner() {
 
-  const bannerContentByPath = {
+  type BannerContent = {
+    title: string;
+    subtitle: string;
+    buttonText: string | null;
+  };
+
+  const bannerContentByPath: Record<string, BannerContent> = {
     "/": {
       title: "Lográ tus objetivos de inglés",
       subtitle: "Ya seas estudiante o profesional, estoy para ayudarte a avanzar",
@@ -39,6 +45,11 @@ export default function Banner() {
       subtitle: "Las clases se adaptan completamente a tus objetivos",
       buttonText: null,
     },
+    "/blog/*": {
+      title: "Blog",
+      subtitle: "Ideas, consejos y recursos para acompañarte en tu camino con el inglés",
+      buttonText: null,
+    },
     // fallback
     default: {
       title: "Lográ tus objetivos de inglés",
@@ -47,13 +58,20 @@ export default function Banner() {
     },
   };
 
-  const pathname = usePathname()
+  function getBannerContent(pathname: string) {
+    if (bannerContentByPath[pathname]) {
+      return bannerContentByPath[pathname];
+    }
+    if (pathname.startsWith("/blog/") || pathname === "/blog") {
+      return bannerContentByPath["/blog/*"];
+    }
+    return bannerContentByPath.default;
+  }
 
-  const bannerData =
-    bannerContentByPath[pathname as keyof typeof bannerContentByPath] ||
-    bannerContentByPath.default
+  const pathname = usePathname();
+  const bannerData = getBannerContent(pathname);
 
-  const { title, subtitle, buttonText } = bannerData
+  const { title, subtitle, buttonText } = bannerData;
 
   return (
     <div className="relative flex responsive-container px-2! md:px-8! h-fit items-center justify-center">

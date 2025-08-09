@@ -42,9 +42,9 @@ export default function Header() {
             <li>
               <Link href="/sobre" className="nav-link">Sobre Mi</Link>
             </li>
-            {/* <li>
-              <Link href="/" className="py-2 px-4">Blog</Link>
-            </li> */}
+            <li>
+              <Link href="/blog" className="nav-link">Blog</Link>
+            </li>
             <li>
               <NavMenu />
             </li>
@@ -147,6 +147,9 @@ const NavDrawer = () => {
             </li>
             <li>
               <Link href="/sobre" className="nav-link" onClick={handleClose}>Sobre Mi</Link>
+            </li>
+            <li>
+              <Link href="/blog" className="nav-link" onClick={handleClose}>Blog</Link>
             </li>
             <li>
               <Link href="/cursos-grupales" className="nav-link" onClick={handleClose}>Cursos Grupales</Link>
