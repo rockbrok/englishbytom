@@ -24,8 +24,9 @@ export async function generateStaticParams() {
   return Array.from(tagsSet).map(tag => ({ tag }));
 }
 
-export default async function TagPage({ params }: { params: { tag: string } }) {
-  const { tag } = params;
+export default async function TagPage(props: { params: Awaited<ReturnType<typeof generateStaticParams>>[number] }) {
+
+  const { tag } = props.params
   const contentDir = path.join(process.cwd(), "content");
   const files = fs.readdirSync(contentDir).filter(f => f.endsWith(".docx"));
 
