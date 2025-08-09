@@ -47,19 +47,28 @@ export default async function BlogPost(props: BlogPostProps) {
   const [title, date, author, tag, image, ...body] = lines;
 
   return (
-    <article className="prose max-w-3xl mx-auto p-4">
-      <h1>{title}</h1>
-      <small>{date}</small> | <small>{author}</small> | <Link href={`tag/${slugify(tag, { lower: true })}`}>{tag}</Link>
-      {image && (
-        <div className="my-4">
-          <Image src={image} alt={title} width={800} height={500} />
+    <article className="section">
+      <div className="flex flex-col gap-0.5">
+        <h3 className="h3">{title}</h3>
+        <div className="flex flex-row justify-between items-center">
+          <small>{date}</small>
+          <Link href={`tag/${slugify(tag, { lower: true })}`}>{tag}</Link>
         </div>
-      )}
-      <div>
-        {body.map((line, i) => (
-          <p key={i}>{line}</p>
-        ))}
+        <small>{author}</small>
       </div>
+      <div className="relative flex w-full h-[300px]">
+        <Image
+          src={image}
+          style={{ objectFit: "cover" }}
+          className="rounded-md"
+          sizes="100vw"
+          fill
+          alt="Students at university"
+        />
+      </div>
+      {body.map((line, i) => (
+        <p key={i}>{line}</p>
+      ))}
     </article>
   );
 }
