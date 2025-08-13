@@ -6,7 +6,7 @@ import FacebookIcon from './Facebook.svg'
 
 export default function Footer() {
   return (
-    <div className="w-full flex flex-col items-center ">
+    <div className="w-full flex flex-col items-center mt-8">
       <footer className="flex flex-col sm:flex-row responsive-container py-4 justify-between border-t-1">
         <h6>English by Tom</h6>
         <div className="flex flex-col gap-2">

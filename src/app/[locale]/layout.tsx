@@ -36,7 +36,7 @@ export default async function LocaleLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
-      <body className="flex flex-col items-center gap-8">
+      <body className="flex flex-col items-center">
         <NextIntlClientProvider>
           <Header />
           <main className="responsive-container flex flex-col justify-start gap-y-8">{children}</main>

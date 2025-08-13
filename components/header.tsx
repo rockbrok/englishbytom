@@ -56,7 +56,7 @@ export default function Header() {
           <Link href="/contact" >{t('contact')}</Link>
         </Button>
       </header>
-      <Banner />
+      {/* <Banner /> */}
     </div>
   )
 }
