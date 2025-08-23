@@ -36,10 +36,10 @@ export default async function LocaleLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
-      <body className="flex flex-col items-center">
+      <body className="flex flex-col items-center h-screen">
         <NextIntlClientProvider>
           <LocalizedNav />
-          <article className="prose md:prose-md lg:prose-lg flex flex-col justify-start container-screen">
+          <article className="prose md:prose-md lg:prose-lg flex flex-col justify-start container-screen grow">
             {children}
           </article>
           <Footer />

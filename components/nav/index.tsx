@@ -16,7 +16,7 @@ export default function Nav({ Content }: any) {
   const components = {
     ul: (props: any) => (
       <ul
-        className="flex flex-col items-center md:flex-row list-none m-0!"
+        className="flex flex-col items-center gap-4 md:gap-0 md:flex-row list-none m-0!"
         {...props}
       />
     ),

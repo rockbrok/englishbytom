@@ -20,7 +20,7 @@ export default function FAQ({
   return (
     <div className="flex flex-col items-center bg-gray-100 pb-18 mt-16 w-full">
       <h2>{title}</h2>
-      <Accordion type="single" collapsible className="w-full sm:max-w-full md:max-w-2xl lg:max-w-3xl self-center">
+      <Accordion type="single" collapsible className="w-full px-[10px]! md:px-0! sm:max-w-full md:max-w-2xl lg:max-w-3xl self-center">
         {items.map((faq, idx) => (
           <AccordionItem key={idx} value={`item-${idx}`}>
             <AccordionTrigger>{faq.question}</AccordionTrigger>

@@ -9,38 +9,38 @@ export const footerContent = {
       title: "Classes",
       items: [
         { text: "Individual classes", href: "/classes/individual" },
-        { text: "Group classes", href: "/classes/group" },
+        // { text: "Group classes", href: "/classes/group" },
       ],
     },
     {
       title: "Community",
       items: [
-        { text: "Forum", href: "/community/forum" },
-        { text: "Discord", href: "/community/discord" },
+        { text: "Forum", href: "/community" },
+        { text: "Discord", href: "https://discord.gg/wQ63ZPvCTk" },
       ],
     },
     {
       title: "Resources",
       items: [
         { text: "Blog", href: "/blog" },
-        { text: "Help Center", href: "/help" },
+        // { text: "Help Center", href: "/help" },
       ],
     },
     {
       title: "More",
       items: [
-        { text: "About Us", href: "/about" },
+        { text: "About", href: "/about" },
         { text: "Contact", href: "/contact" },
       ],
     },
   ],
-  newsletter: { title: "Get the newsletter" },
+  // newsletter: { title: "Get the newsletter" },
   links: [
-    { text: "Privacy Policy", href: "/privacy" },
+    // { text: "Privacy Policy", href: "/privacy" },
   ],
   social: [
     { icon: YoutubeIcon, href: "https://www.youtube.com/@EnglishbyTomYT", alt: "YouTube" },
-    { icon: InstagramIcon, href: "https://www.instagram.com/englishbytom", alt: "Instagram" },
+    // { icon: InstagramIcon, href: "https://www.instagram.com/englishbytom", alt: "Instagram" },
     { icon: FacebookIcon, href: "https://www.facebook.com/englishbytom", alt: "Facebook" },
   ],
 };

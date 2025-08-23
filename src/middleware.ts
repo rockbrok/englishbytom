@@ -8,6 +8,7 @@ import { routing } from './i18n/routing';
 const intlMiddleware = createMiddleware(routing);
 
 export default function middleware(request: NextRequest) {
+  // return;
   const { pathname } = request.nextUrl;
 
   // Only detect language at the root (no locale in URL yet)
@@ -22,6 +23,7 @@ export default function middleware(request: NextRequest) {
 
     const url = request.nextUrl.clone();
     url.pathname = `/${locale}`;
+    
     return NextResponse.redirect(url);
   }
 

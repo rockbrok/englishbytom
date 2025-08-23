@@ -14,7 +14,7 @@ export default function Footer() {
   return (
     <footer className="flex flex-col items-center w-full mt-14 text-sm">
       <div className="container-fluid">
-        <div className="flex flex-row gap-2 justify-between">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
           {footerContent.sections.map((section) => (
             <FooterSection
               key={section.title}
@@ -23,10 +23,10 @@ export default function Footer() {
             />
           ))}
 
-          <div className="prose w-full flex md:flex-col">
+          {/* <div className="prose w-full flex flex-col">
             <h4>{footerContent.newsletter.title}</h4>
             <NewsletterForm />
-          </div>
+          </div> */}
         </div>
       </div>
 
@@ -35,11 +35,11 @@ export default function Footer() {
       <span>{footerContent.title}</span>
 
       <ul className="flex flex-row items-center gap-6 py-4 list-none p-0">
-        {footerContent.links.map((link) => (
+        {/* {footerContent.links.map((link) => (
           <li key={link.href}>
             <a href={link.href}>{link.text}</a>
           </li>
-        ))}
+        ))} */}
 
         {footerContent.social.map((social) => (
           <li key={social.href}>
@@ -67,7 +67,7 @@ function FooterSection({
   items: { text: string; href: string }[];
 }) {
   return (
-    <div className="prose w-full flex md:flex-col">
+    <div className="prose w-full flex flex-col">
       <h4>{title}</h4>
       <ul className="flex flex-col list-none p-0!">
         {items.map((item) => (

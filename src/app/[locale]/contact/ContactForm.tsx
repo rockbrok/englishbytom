@@ -24,11 +24,11 @@ import HCaptcha from "@hcaptcha/react-hcaptcha";
 import useWeb3Forms from "@web3forms/react";
 import { useState } from "react";
 
+
 type FormValues = {
   firstName: string;
   lastName: string;
   email: string;
-  telephone: string;
   class: string;
   level: string;
   message: string;
@@ -37,7 +37,7 @@ type FormValues = {
 
 export type ContactFormProps = {
   title: string;
-  placeholders: { firstName: string; lastName: string; email: string; telephone: string };
+  placeholders: { firstName: string; lastName: string; email: string; };
   selectOptions: {
     class: { value: string; label: string }[];
     level: { value: string; label: string }[];
@@ -49,14 +49,13 @@ export type ContactFormProps = {
 
 export default function ContactForm(props: ContactFormProps) {
   const formSchema = z.object({
-    firstName: z.string().min(2),
-    lastName: z.string().min(2),
+    firstName: z.string().min(2, "Please enter your full first name"),
+    lastName: z.string().min(2, "Please enter your full last name"),
     email: z.email(),
-    telephone: z.string().min(10),
-    class: z.string().nonempty(),
-    level: z.string().nonempty(),
+    class: z.string().nonempty("Please select the type of English class"),
+    level: z.string().nonempty("Please select your current English level"),
     message: z.string().max(600),
-    "h-captcha-response": z.string().nonempty(),
+    "h-captcha-response": z.string().nonempty("Please complete the CAPTCHA"),
   });
 
   const form = useForm<FormValues>({
@@ -65,7 +64,6 @@ export default function ContactForm(props: ContactFormProps) {
       firstName: "",
       lastName: "",
       email: "",
-      telephone: "",
       class: "",
       level: "",
       message: "",
@@ -78,7 +76,7 @@ export default function ContactForm(props: ContactFormProps) {
     access_key: "597c551f-db35-46cf-87ea-621745939468",
     settings: {
       from_name: "English by Tom",
-      subject: "Nuevo mensaje del formulario",
+      subject: "New contact form message",
     },
     onSuccess: () => {
       setIsSuccess(true);
@@ -92,7 +90,7 @@ export default function ContactForm(props: ContactFormProps) {
     form.setValue("h-captcha-response", token, { shouldValidate: true });
 
   return (
-    <section className="section">
+<div className="flex flex-col gap-4! w-full sm:max-w-full md:max-w-2xl lg:max-w-3xl self-center pb-18">
       <h2>{props.title}</h2>
       <Form {...form}>
         <form
@@ -145,7 +143,7 @@ export default function ContactForm(props: ContactFormProps) {
             )}
           />
 
-          <FormField
+          {/* <FormField
             name="telephone"
             control={form.control}
             render={({ field }) => (
@@ -159,7 +157,7 @@ export default function ContactForm(props: ContactFormProps) {
                 <FormMessage />
               </FormItem>
             )}
-          />
+          /> */}
 
           {/* Select Inputs */}
           <FormField
@@ -168,9 +166,9 @@ export default function ContactForm(props: ContactFormProps) {
             render={({ field }) => (
               <FormItem>
                 <Select onValueChange={field.onChange} value={field.value}>
-                  <FormControl>
+                  <FormControl className="w-full!">
                     <SelectTrigger>
-                      <SelectValue placeholder="Select class" />
+                      <SelectValue placeholder="Select class *" />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
@@ -192,9 +190,9 @@ export default function ContactForm(props: ContactFormProps) {
             render={({ field }) => (
               <FormItem>
                 <Select onValueChange={field.onChange} value={field.value}>
-                  <FormControl>
+                  <FormControl className="w-full!">
                     <SelectTrigger>
-                      <SelectValue placeholder="Select level" />
+                      <SelectValue placeholder="Select level *" />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
@@ -254,6 +252,6 @@ export default function ContactForm(props: ContactFormProps) {
           </div>
         </form>
       </Form>
-    </section>
+    </div>
   );
 }

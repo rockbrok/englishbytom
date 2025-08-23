@@ -1,38 +1,47 @@
-import { TestimonialCards } from "@/components/testimonialCards"
-
 export default function About() {
   return (
     <>
-      <section className="section">
-        <h3 className="h3">Sobre Mi</h3>
+      <div className="flex flex-col gap-4! w-full sm:max-w-full md:max-w-2xl lg:max-w-3xl self-center pb-18">
+        <h2>About me</h2>
         <p>
-          Soy profesor de inglés certificado, nacido en Estados Unidos, donde estudié el idioma y comencé mi camino como docente. Actualmente vivo en Tucumán, adonde vine por amor y donde encontré un lugar en el que me siento muy cómodo enseñando y aprendiendo todos los días.
+          I am a certified English teacher, born in the United States, where I
+          studied English and began my journey as a teacher. I currently
+          live in Argentina, where I feel very comfortable teaching and learning every day.
         </p>
         <p>
-          En mi tiempo libre me gusta salir a caminar, tomar mate, dibujar y estudiar cosas nuevas. Me interesan mucho los procesos de aprendizaje, no solo como docente, sino también como estudiante curioso que siempre quiere entender un poco más.
+          In my free time, I like to go for walks, drink mate, draw, and study
+          new things. I am very interested in the learning process, not only as
+          a teacher, but also as a curious student who always wants to
+          understand a little more.
         </p>
         <p>
-          Mi vocación por la enseñanza empezó en la secundaria, gracias a profesores de inglés que me marcaron por su claridad, dedicación y estilo humano. Fue su forma de enseñar la que me inspiró a seguir ese mismo camino.
-        </p>
-
-      </section>
-      <section className="section">
-        <h3 className="h3">Mi enfoque pedagógico</h3>
-        <p>
-          Cada persona aprende de manera distinta, y eso es algo que tengo muy presente al planificar mis clases. Mi objetivo no es solo enseñar reglas gramaticales o vocabulario, sino crear espacios donde el idioma cobre vida y tenga sentido real para cada estudiante.
-        </p>
-        <p>
-          A lo largo de estos años desarrollé un enfoque flexible, que combina distintos métodos pedagógicos según las necesidades del grupo o de cada persona. Puedo trabajar con estructura cuando es necesario, pero también doy mucha importancia a la práctica real del idioma: hablar, escuchar, entender y sentirse cómodo usando el inglés.
-        </p>
-        <p>
-          Creo en el aprendizaje como un proceso activo, donde equivocarse no es un problema, sino una parte fundamental del camino. Mi rol es acompañar ese proceso con paciencia, claridad y compromiso, para que cada estudiante pueda avanzar con confianza y disfrutar el proceso.
+          My vocation for teaching began in high school, thanks to English
+          teachers who left a lasting impression on me with their clarity,
+          dedication, and humility. It was their way of teaching that
+          inspired me to follow that same path.
         </p>
 
-      </section>
-      {/* <section className="section">
-        <h3 className="h3">Testimoniales</h3>
-        <TestimonialCards />
-      </section> */}
+        <h2>My pedagogical approach</h2>
+        <p>
+          Everyone learns differently, and that is something I keep in mind when
+          planning my classes. My goal is not just to teach grammar rules or
+          vocabulary, but to create spaces where the language comes alive and
+          makes sense for each student.
+        </p>
+        <p>
+          Over the years, I've developed a flexible approach that combines
+          different teaching methods according to the needs of the group or each
+          individual. I can work with structure when necessary, but I also place
+          great importance on actual language practice: speaking, listening,
+          understanding, and feeling comfortable using English.
+        </p>
+        <p>
+          I believe in learning as an active process, where making mistakes is
+          not a problem, but a fundamental part of the journey. My role is to
+          accompany this process with patience, clarity, and commitment, so that
+          each student can move forward with confidence and enjoy the process.
+        </p>
+      </div>
     </>
-  )
+  );
 }

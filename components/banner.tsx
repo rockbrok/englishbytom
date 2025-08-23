@@ -79,24 +79,22 @@ export default function Banner({ title, subtitle, button }: BannerContent) {
   // const { title, subtitle, buttonText } = getBannerContent(normalizedPath);
 
   return (
-    <div className="container-fluid">
-    <div className="relative flex px-2! md:px-8! h-fit">
+    <div className="relative flex flex-col h-fit w-full! items-center">
       <Image
         src={BannerImg}
         style={{ objectFit: "cover" }}
-        className="opacity-15 rounded-md m-0!"
+        className="opacity-15 m-0!"
         sizes="100vw"
         fill
         alt="Students at university"
       />
-      <div className="z-40 flex flex-col gap-4 py-8">
+      <div className="z-40 container-fluid flex flex-col gap-4 py-10 md:py-16">
         <div className="flex flex-col gap-0.5">
           <h1 className="mb-0!">{title}</h1>
           <p>{subtitle}</p>
         </div>
         {button}
       </div>
-    </div>
     </div>
   );
 }
